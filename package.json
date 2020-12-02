@@ -1,0 +1,25 @@
+{
+  "name": "ipfs-storage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/memory-hole/ipfs-storage.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/memory-hole/ipfs-storage/issues"
+  },
+  "homepage": "https://gitlab.com/memory-hole/ipfs-storage#readme",
+  "dependencies": {
+    "aws-sdk": "^2.802.0",
+    "fastify": "^3.8.0",
+    "ipfs-core": "^0.3.0",
+    "node-uuid": "^1.4.8"
+  }
+}

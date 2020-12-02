@@ -1,0 +1,28 @@
+eersion: '3.3'
+
+services:
+    
+    minio:
+        image: minio/minio
+        environment:
+            MINIO_ACCESS_KEY: root
+            MINIO_SECRET_KEY: super_secret_key
+        volumes:
+          - minio-data:/export
+        ports:
+          - "9001:9000"
+        command: server /data
+
+    server:
+        image: node:14.15.1
+        volumes:
+            - source-code:/var/lib/db
+        ports:
+            - 8000:8000
+
+        depends_on:
+            - minio
+
+volumes:
+    minio-data:
+    source-code:
