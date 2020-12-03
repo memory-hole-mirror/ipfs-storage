@@ -3,3 +3,28 @@
   <br />
   <button type="submit">Upload</button>
 </form>
+<hr />
+
+<div id="display">
+</div>
+
+
+<script>
+  const displayElm = document.querySelector('#display');
+  fetch('http://localhost:8000/posts')
+  .then(res => res.json() )
+  .then(posts => {
+    if(posts.length >= 1) {
+      posts.forEach(post => {
+        const imgElm = document.createElement('img');
+        imgElm.id = post.ID;
+        imgElm.src = post.ipfs.url;
+        imgElm.width = 400;
+        displayElm.append(imgElm);
+      });
+    }
+  })
+  .catch(err => {
+    console.error(err);
+  });
+</script>
