@@ -29,9 +29,6 @@ services:
 
     mongo:
         image: mongo:3.6.21
-        environment:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: super_secret_key
 
 volumes:
     minio-data:
