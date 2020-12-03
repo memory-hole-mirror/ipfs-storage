@@ -4,8 +4,6 @@ const fs = require('fs');
 const IPFS = require('ipfs-core');
 const util = require('util');
 const path = require('path');
-const { pipeline } = require('stream');
-const pump = util.promisify(pipeline);
 const mongoose = require('mongoose');
 
 const fastify = require('fastify')({
