@@ -29,7 +29,9 @@ services:
 
     mongo:
         image: mongo:3.6.21
+        volumes:
+          - db:/data/db'
 
 volumes:
     minio-data:
-    source-code:
+    db:
