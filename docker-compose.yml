@@ -14,14 +14,24 @@ services:
         command: server /data
 
     server:
-        image: node:14.15.1
+        build:
+            dockerfile: ./Dockerfile
+            context: .
         volumes:
-            - source-code:/var/lib/db
+            - .:/app
         ports:
             - 8000:8000
 
         depends_on:
             - minio
+            - mongo
+        command: npm run dev
+
+    mongo:
+        image: mongo:3.6.21
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: super_secret_key
 
 volumes:
     minio-data:
